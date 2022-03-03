@@ -13,7 +13,7 @@ def chose():
     questions_with = []
     for j in indexes:
         questions1.append(result[j])
-    for n in range(97):
+    for n in range(10):
         b = questions1[n]
         result = cur.execute(f"""SELECT * FROM qu
                         WHERE ques = '{''.join(b)}'""").fetchall()
