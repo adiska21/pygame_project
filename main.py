@@ -23,7 +23,7 @@ class StartMenu(QMainWindow):
         os.system(r"python start_pong.py")
 
     def que(self):
-        pass
+        os.system(r"python que\que.py")
 
 
 # активация моего кода
