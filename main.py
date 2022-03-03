@@ -20,8 +20,8 @@ class StartMenu(QMainWindow):
         os.system(r"python start_tictaktoe.py")
 
     def pong(self):
-        pass
-    # активация pong
+        os.system(r"python start_pong.py")
+
     def que(self):
         pass
 
