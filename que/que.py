@@ -6,7 +6,7 @@ def chose():
     indexes = sample(range(0, 97), 10)
     import sqlite3
 
-    con = sqlite3.connect("Question.sqlite")
+    con = sqlite3.connect(r"que\Question.sqlite")
     cur = con.cursor()
     result = cur.execute("""SELECT ques FROM qu""").fetchall()
     questions1 = []
@@ -89,7 +89,7 @@ if __name__ == "__main__":
                     clock.tick(1)
                     pygame.display.update()
                 random_heh = 0
-                while random_heh < 50:
+                while random_heh < 10:
                     random_heh += 1
                     clock.tick(1)
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
                 textRectObj.center = (300, 300)
                 pygame.draw.rect(screen, pygame.Color('blue'), (150, 150, 300, 300), 1)
                 screen.blit(textSurfaceObj, textRectObj)
-                clock.tick(1)
+                clock.tick(2)
                 pygame.display.update()
             elif i % 2 == 1:
                 ansflag = False
