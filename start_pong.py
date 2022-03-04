@@ -7,7 +7,7 @@ import os
 class StartMenuPong(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("pong_regim.ui", self)
+        uic.loadUi("select_regime.ui", self)
         self.button_pvp.clicked.connect(pvp)
         self.button_pvb.clicked.connect(pvb)
 
