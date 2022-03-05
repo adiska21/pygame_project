@@ -25,6 +25,7 @@ if __name__ == "__main__":
     pygame.init()
     size_window = width, height = 600, 600
     screen = pygame.display.set_mode(size_window)
+    screen.fill("black")
     questions = chose()
     coords = [((300, 150), (300, 175), (300, 200), (300, 225), (300, 250)),
               ((165, 372), (165, 397)),  ((440, 373), (440, 398)), ((165, 525), (165, 550)), ((440, 522), (440, 548))]
@@ -34,11 +35,11 @@ if __name__ == "__main__":
     col_of_true_ans = 0
     ansflag = None
     clock = pygame.time.Clock()
-    for i in range(21):
+    for i in range(23):
         if running:
-            pygame.display.update()
-            if i == 20:
+            if i == 22:
                 if col_of_true_ans == 10:
+                    screen.fill('black')
                     fontObj = pygame.font.Font('freesansbold.ttf', 20)
                     textSurfaceObj = fontObj.render(f'Ничё се ты гений', True, pygame.Color('green'))
                     textRectObj = textSurfaceObj.get_rect()
@@ -46,6 +47,7 @@ if __name__ == "__main__":
                     pygame.draw.rect(screen, pygame.Color('green'), (150, 150, 300, 300), 1)
                     screen.blit(textSurfaceObj, textRectObj)
                     clock.tick(1)
+                    pygame.display.update()
                 elif 9 >= col_of_true_ans >= 8:
                     screen.fill('black')
                     fontObj = pygame.font.Font('freesansbold.ttf', 20)
@@ -87,7 +89,7 @@ if __name__ == "__main__":
                     clock.tick(1)
                     pygame.display.update()
                 random_heh = 0
-                while random_heh < 10:
+                while random_heh < 50:
                     random_heh += 1
                     clock.tick(1)
 
@@ -99,7 +101,7 @@ if __name__ == "__main__":
                 textRectObj.center = (300, 300)
                 pygame.draw.rect(screen, pygame.Color('blue'), (150, 150, 300, 300), 1)
                 screen.blit(textSurfaceObj, textRectObj)
-                clock.tick(2)
+                clock.tick(1)
                 pygame.display.update()
             elif i % 2 == 1:
                 ansflag = False
@@ -186,8 +188,8 @@ if __name__ == "__main__":
                     while True and j == 4:
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
-                                running = False
-                                exit()
+                                    running = False
+                                    exit()
                             if event.type == pygame.MOUSEBUTTONDOWN:
                                 m_position = event.pos
                                 flag_abc = True
@@ -209,6 +211,7 @@ if __name__ == "__main__":
                             break
             else:
                 if ansflag:
+                    screen.fill("black")
                     pygame.display.update()
                     for _ in range(10):
                         pygame.display.update()
@@ -223,6 +226,7 @@ if __name__ == "__main__":
 
                 else:
                     if i != 0:
+                        screen.fill("black")
                         pygame.display.update()
                         for _ in range(10):
                             fontObj = pygame.font.Font('freesansbold.ttf', 20)
@@ -232,3 +236,4 @@ if __name__ == "__main__":
                             pygame.draw.rect(screen, pygame.Color('red'), (150, 150, 300, 300), 1)
                             screen.blit(textSurfaceObj, textRectObj)
                             clock.tick(10)
+                            pygame.display.update()
